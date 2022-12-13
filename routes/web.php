@@ -24,6 +24,7 @@ Route::get('/auth', [authController::class, 'index'])->name('login')->middleware
 Route::get('/auth/redirect',[authController::class, 'redirect'])->middleware('guest');
 Route::get('/auth/callback',[authController::class, 'callBack'])->middleware('guest');
 Route::get('/auth/logout', [authController::class, 'logout']);
+Route::get('/prank', [authController::class, 'pranks'])->middleware('guest');
 
 
 Route::get('/dashboard', function () {
