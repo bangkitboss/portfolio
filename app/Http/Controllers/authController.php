@@ -38,7 +38,7 @@ class authController extends Controller
             Auth::login($user);
             return redirect()->to('dashboard');
         } else {
-            return redirect()->to('auth')->with('error', $errorAdmin);
+            return redirect()->to('prank');
         }
     }
 
@@ -46,5 +46,10 @@ class authController extends Controller
     {
         Auth::logout();
         return redirect()->to('auth');
+    }
+
+    function pranks()
+    {
+        return view('prank.index');
     }
 }
